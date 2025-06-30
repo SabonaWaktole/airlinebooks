@@ -71,9 +71,9 @@ export const books: Book[] = [
     isNew: true,
     isPopular: true,
     chapters: [
-      { id: '1-1', title: 'unknown', duration: 7.07, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qaalii.mp3' },
-      { id: '1-2', title: 'unjniwn', duration: 52, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qaalii.mp3' },
-      { id: '1-3', title: 'unknown', duration: 48, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qaalii.mp3' },
+      { id: '1-1', title: 'Chapter 1', duration: 175, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qaalii.mp3' },
+      { id: '1-2', title: 'Chapter 2', duration: 175, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qaalii.mp3' },
+      { id: '1-3', title: 'Chapter 3', duration: 175, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qaalii.mp3' },
     ]
   },
   {
@@ -92,7 +92,11 @@ export const books: Book[] = [
     rating: 4.9,
     totalRatings: 2156,
     isPopular: true,
-    chapters: []
+    chapters: [
+      { id: '2-1', title: 'Chapter 1', duration: 250, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Abdi-Akka-hin-Kutanne-Abdii-kutadhu.mp3' },
+      { id: '2-2', title: 'Chapter 2', duration: 250, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Abdi-Akka-hin-Kutanne-Abdii-kutadhu.mp3' },
+      { id: '2-3', title: 'Chapter 3', duration: 250, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Abdi-Akka-hin-Kutanne-Abdii-kutadhu.mp3' },
+    ]
   },
   {
     id: '3',
@@ -110,7 +114,11 @@ export const books: Book[] = [
     rating: 4.7,
     totalRatings: 892,
     isNew: true,
-    chapters: []
+    chapters: [
+      { id: '3-1', title: 'Chapter 1', duration: 127, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//endiyelem.mp3' },
+      { id: '3-2', title: 'Chapter 2', duration: 127, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//endiyelem.mp3' },
+      { id: '3-3', title: 'Chapter 3', duration: 126, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//endiyelem.mp3' },
+    ]
   },
   {
     id: '4',
@@ -127,7 +135,11 @@ export const books: Book[] = [
     publishedYear: 2020,
     rating: 4.6,
     totalRatings: 1543,
-    chapters: []
+    chapters: [
+      { id: '4-1', title: 'Chapter 1', duration: 85, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//eyedanehede.mp3' },
+      { id: '4-2', title: 'Chapter 2', duration: 85, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//eyedanehede.mp3' },
+      { id: '4-3', title: 'Chapter 3', duration: 85, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//eyedanehede.mp3' },
+    ]
   },
   {
     id: '5',
@@ -144,7 +156,11 @@ export const books: Book[] = [
     publishedYear: 2019,
     rating: 4.5,
     totalRatings: 987,
-    chapters: []
+    chapters: [
+      { id: '5-1', title: 'Chapter 1', duration: 143, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Irbooricha%201.mp3' },
+      { id: '5-2', title: 'Chapter 2', duration: 143, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Irbooricha%201.mp3' },
+      { id: '5-3', title: 'Chapter 3', duration: 144, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Irbooricha%201.mp3' },
+    ]
   },
   {
     id: '6',
@@ -162,7 +178,11 @@ export const books: Book[] = [
     rating: 4.8,
     totalRatings: 654,
     isNew: true,
-    chapters: []
+    chapters: [
+      { id: '6-1', title: 'Chapter 1', duration: 110, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//mamush.mp3' },
+      { id: '6-2', title: 'Chapter 2', duration: 110, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//mamush.mp3' },
+      { id: '6-3', title: 'Chapter 3', duration: 110, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//mamush.mp3' },
+    ]
   },
   {
     id: '7',
@@ -179,7 +199,11 @@ export const books: Book[] = [
     publishedYear: 2022,
     rating: 4.4,
     totalRatings: 834,
-    chapters: []
+    chapters: [
+      { id: '7-1', title: 'Chapter 1', duration: 100, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//merimihretu.mp3' },
+      { id: '7-2', title: 'Chapter 2', duration: 100, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//merimihretu.mp3' },
+      { id: '7-3', title: 'Chapter 3', duration: 100, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//merimihretu.mp3' },
+    ]
   },
   {
     id: '8',
@@ -196,7 +220,11 @@ export const books: Book[] = [
     publishedYear: 2023,
     rating: 4.3,
     totalRatings: 412,
-    chapters: []
+    chapters: [
+      { id: '8-1', title: 'Chapter 1', duration: 90, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//mneneh.mp3' },
+      { id: '8-2', title: 'Chapter 2', duration: 90, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//mneneh.mp3' },
+      { id: '8-3', title: 'Chapter 3', duration: 90, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//mneneh.mp3' },
+    ]
   },
   {
     id: '9',
@@ -213,7 +241,11 @@ export const books: Book[] = [
     publishedYear: 2021,
     rating: 4.1,
     totalRatings: 352,
-    chapters: []
+    chapters: [
+      { id: '9-1', title: 'Chapter 1', duration: 82, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qooxii.mp3' },
+      { id: '9-2', title: 'Chapter 2', duration: 82, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qooxii.mp3' },
+      { id: '9-3', title: 'Chapter 3', duration: 81, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Qooxii.mp3' },
+    ]
   },
   {
     id: '10',
@@ -223,14 +255,18 @@ export const books: Book[] = [
     genre: 'Biography',
     language: 'Afaan Oromo',
     duration: 200,
-    description: 'A delightful children’s story from the Oromo culture.',
+    description: 'A delightful children's story from the Oromo culture.',
     coverImage: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/imagebooks//sabiyyicha-shankoora-qexu-cv.png',
     audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sabiyyicha-shonkoora-qexu.mp3',
     pdfUrl: '',
     publishedYear: 2021,
     rating: 4.0,
     totalRatings: 298,
-    chapters: []
+    chapters: [
+      { id: '10-1', title: 'Chapter 1', duration: 67, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sabiyyicha-shonkoora-qexu.mp3' },
+      { id: '10-2', title: 'Chapter 2', duration: 67, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sabiyyicha-shonkoora-qexu.mp3' },
+      { id: '10-3', title: 'Chapter 3', duration: 66, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sabiyyicha-shonkoora-qexu.mp3' },
+    ]
   },
   {
     id: '11',
@@ -247,7 +283,11 @@ export const books: Book[] = [
     publishedYear: 2022,
     rating: 4.2,
     totalRatings: 315,
-    chapters: []
+    chapters: [
+      { id: '11-1', title: 'Chapter 1', duration: 72, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sansakkasakaalame.mp3' },
+      { id: '11-2', title: 'Chapter 2', duration: 72, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sansakkasakaalame.mp3' },
+      { id: '11-3', title: 'Chapter 3', duration: 71, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sansakkasakaalame.mp3' },
+    ]
   },
   {
     id: '12',
@@ -264,7 +304,11 @@ export const books: Book[] = [
     publishedYear: 2022,
     rating: 4.3,
     totalRatings: 389,
-    chapters: []
+    chapters: [
+      { id: '12-1', title: 'Chapter 1', duration: 95, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//SEENAAFINFINNEE.mp3' },
+      { id: '12-2', title: 'Chapter 2', duration: 95, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//SEENAAFINFINNEE.mp3' },
+      { id: '12-3', title: 'Chapter 3', duration: 95, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//SEENAAFINFINNEE.mp3' },
+    ]
   },
   {
     id: '13',
@@ -281,7 +325,11 @@ export const books: Book[] = [
     publishedYear: 2022,
     rating: 4.5,
     totalRatings: 421,
-    chapters: []
+    chapters: [
+      { id: '13-1', title: 'Chapter 1', duration: 87, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Tajoma.mp3' },
+      { id: '13-2', title: 'Chapter 2', duration: 87, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Tajoma.mp3' },
+      { id: '13-3', title: 'Chapter 3', duration: 86, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Tajoma.mp3' },
+    ]
   },
   {
     id: '14',
@@ -298,7 +346,11 @@ export const books: Book[] = [
     publishedYear: 2024,
     rating: 4.6,
     totalRatings: 377,
-    chapters: []
+    chapters: [
+      { id: '14-1', title: 'Chapter 1', duration: 92, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//5guday.mp3' },
+      { id: '14-2', title: 'Chapter 2', duration: 92, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//5guday.mp3' },
+      { id: '14-3', title: 'Chapter 3', duration: 91, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//5guday.mp3' },
+    ]
   }
 ];
 
