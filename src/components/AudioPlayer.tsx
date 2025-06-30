@@ -83,6 +83,35 @@ export const AudioPlayer: React.FC = () => {
     audio.volume = audioPlayerState.volume;
   }, [audioPlayerState.volume]);
 
+  // Effect to handle autoplay when isPlaying state changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || !currentBook) return;
+
+    if (audioPlayerState.isPlaying && audio.paused) {
+      // Ensure audio is not muted and volume is audible
+      audio.muted = false;
+      if (audio.volume === 0) {
+        audio.volume = audioPlayerState.volume || 0.7;
+      }
+      
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Audio started playing successfully
+            console.log('Audio started playing');
+          })
+          .catch((error) => {
+            console.error('Error playing audio:', error);
+            updateAudioPlayer({ isPlaying: false, isLoading: false });
+          });
+      }
+    } else if (!audioPlayerState.isPlaying && !audio.paused) {
+      audio.pause();
+    }
+  }, [audioPlayerState.isPlaying, currentBook, audioPlayerState.volume, updateAudioPlayer]);
+
   const togglePlayPause = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -91,6 +120,12 @@ export const AudioPlayer: React.FC = () => {
       audio.pause();
       updateAudioPlayer({ isPlaying: false });
     } else {
+      // Ensure audio is not muted and volume is audible
+      audio.muted = false;
+      if (audio.volume === 0) {
+        audio.volume = audioPlayerState.volume || 0.7;
+      }
+      
       const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise
@@ -169,6 +204,7 @@ export const AudioPlayer: React.FC = () => {
         ref={audioRef}
         src={audioPlayerState.currentChapter?.audioUrl || currentBook.audioUrl}
         preload="auto"
+        muted={false}
       />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
