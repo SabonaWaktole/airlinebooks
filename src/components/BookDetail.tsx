@@ -164,7 +164,7 @@ export const BookDetail: React.FC = () => {
               )}
             </div>
 
-            {showPdf && (
+            {showPdf && book && (
               <div className="flex items-center space-x-2">
                 {/* PDF View Mode Toggle */}
                 <div className="flex items-center space-x-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
@@ -242,7 +242,7 @@ export const BookDetail: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {showPdf && hasPdf ? (
+        {showPdf && hasPdf && book ? (
           /* PDF View Layout */
           <div className="grid lg:grid-cols-4 gap-6">
             {/* PDF Viewer - Takes most space */}
