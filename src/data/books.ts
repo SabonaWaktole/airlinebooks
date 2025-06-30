@@ -255,7 +255,7 @@ export const books: Book[] = [
     genre: 'Biography',
     language: 'Afaan Oromo',
     duration: 200,
-    description: 'A delightful children's story from the Oromo culture.',
+    description: 'A delightful children\'s story from the Oromo culture.',
     coverImage: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/imagebooks//sabiyyicha-shankoora-qexu-cv.png',
     audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sabiyyicha-shonkoora-qexu.mp3',
     pdfUrl: '',
