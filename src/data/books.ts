@@ -255,7 +255,7 @@ export const books: Book[] = [
     genre: 'Biography',
     language: 'Afaan Oromo',
     duration: 200,
-    description: 'A delightful children\'s story from the Oromo culture.',
+    description: "A delightful children's story from the Oromo culture.",
     coverImage: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/imagebooks//sabiyyicha-shankoora-qexu-cv.png',
     audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//Sabiyyicha-shonkoora-qexu.mp3',
     pdfUrl: '',
@@ -350,7 +350,7 @@ export const books: Book[] = [
       { id: '14-1', title: 'Chapter 1', duration: 92, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//5guday.mp3' },
       { id: '14-2', title: 'Chapter 2', duration: 92, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//5guday.mp3' },
       { id: '14-3', title: 'Chapter 3', duration: 91, audioUrl: 'https://rjiozcbtszmyehzffzpa.supabase.co/storage/v1/object/public/audiobook//5guday.mp3' },
-    ]
+      ]
   }
 ];
 
