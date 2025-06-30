@@ -17,7 +17,7 @@ export const RandomPlayCard: React.FC<RandomPlayCardProps> = ({
   icon, 
   gradient 
 }) => {
-  const { setCurrentBook, updateAudioPlayer, setCurrentChapter } = useApp();
+  const { setCurrentBook, updateAudioPlayer } = useApp();
   const { t } = useLanguage();
 
   const handleRandomPlay = () => {
@@ -25,25 +25,14 @@ export const RandomPlayCard: React.FC<RandomPlayCardProps> = ({
     const randomIndex = Math.floor(Math.random() * books.length);
     const randomBook = books[randomIndex];
     
-    // Set the book as current and start playing immediately
+    // Set the book as current and start playing main audio immediately
     setCurrentBook(randomBook);
     
-    // If the book has chapters, play the first chapter
-    if (randomBook.chapters && randomBook.chapters.length > 0) {
-      const firstChapter = randomBook.chapters[0];
-      setCurrentChapter(firstChapter);
-      updateAudioPlayer({
-        currentChapter: firstChapter,
-        isPlaying: true,
-        currentTime: 0
-      });
-    } else {
-      // If no chapters, play the main audio
-      updateAudioPlayer({
-        isPlaying: true,
-        currentTime: 0
-      });
-    }
+    // Always play the main audio, no chapter checking
+    updateAudioPlayer({
+      isPlaying: true,
+      currentTime: 0
+    });
   };
 
   return (

@@ -9,7 +9,7 @@ interface BookCardProps {
 }
 
 export const BookCard: React.FC<BookCardProps> = ({ book }) => {
-  const { setCurrentView, setSelectedBookId, setCurrentBook, updateAudioPlayer, setCurrentChapter } = useApp();
+  const { setCurrentView, setSelectedBookId, setCurrentBook, updateAudioPlayer } = useApp();
   const { t } = useLanguage();
 
   const formatDuration = (minutes: number) => {
@@ -19,25 +19,14 @@ export const BookCard: React.FC<BookCardProps> = ({ book }) => {
   };
 
   const handleBookClick = () => {
-    // Set the book as current and start playing immediately
+    // Set the book as current and start playing main audio immediately
     setCurrentBook(book);
     
-    // If the book has chapters, play the first chapter
-    if (book.chapters && book.chapters.length > 0) {
-      const firstChapter = book.chapters[0];
-      setCurrentChapter(firstChapter);
-      updateAudioPlayer({
-        currentChapter: firstChapter,
-        isPlaying: true,
-        currentTime: 0
-      });
-    } else {
-      // If no chapters, play the main audio
-      updateAudioPlayer({
-        isPlaying: true,
-        currentTime: 0
-      });
-    }
+    // Always play the main audio, no chapter checking
+    updateAudioPlayer({
+      isPlaying: true,
+      currentTime: 0
+    });
 
     // Navigate to book detail page
     setSelectedBookId(book.id);
