@@ -1,6 +1,6 @@
 import React from 'react';
 import { Play, Star, TrendingUp, BookOpen, Plane, Globe, Shuffle, Headphones, Radio } from 'lucide-react';
-import { books } from '../data/books';
+import { books, genres, narrators, authors, languages } from '../data/books';
 import { useApp } from '../contexts/AppContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -8,6 +8,16 @@ export const Hero: React.FC = () => {
   const { setCurrentBook, setCurrentView, updateAudioPlayer } = useApp();
   const { t } = useLanguage();
   const featuredBook = books.find(book => book.isPopular && book.isNew) || books[0];
+
+  // Calculate real statistics from actual data
+  const totalBooks = books.length;
+  const totalGenres = genres.length;
+  const totalNarrators = narrators.length;
+  const totalAuthors = authors.length;
+  const totalLanguages = languages.length;
+  const totalDuration = books.reduce((sum, book) => sum + book.duration, 0);
+  const totalHours = Math.floor(totalDuration / 60);
+  const averageRating = (books.reduce((sum, book) => sum + book.rating, 0) / books.length).toFixed(1);
 
   const handlePlayBook = () => {
     setCurrentBook(featuredBook);
@@ -161,18 +171,18 @@ export const Hero: React.FC = () => {
                 </button>
               </div>
 
-              {/* Stats */}
+              {/* Real Website Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8">
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-3xl font-bold text-white drop-shadow-md">200+</div>
+                  <div className="text-3xl font-bold text-white drop-shadow-md">{totalBooks}</div>
                   <div className="text-sm text-white/90">{t.books}</div>
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-3xl font-bold text-white drop-shadow-md">8</div>
+                  <div className="text-3xl font-bold text-white drop-shadow-md">{totalLanguages}</div>
                   <div className="text-sm text-white/90">{t.languages}</div>
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-3xl font-bold text-white drop-shadow-md">50+</div>
+                  <div className="text-3xl font-bold text-white drop-shadow-md">{totalNarrators}</div>
                   <div className="text-sm text-white/90">{t.narrators}</div>
                 </div>
               </div>
