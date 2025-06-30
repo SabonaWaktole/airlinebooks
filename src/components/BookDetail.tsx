@@ -145,7 +145,7 @@ export const BookDetail: React.FC = () => {
               </Tooltip>
               
               {/* Book info in header when PDF is open - centered */}
-              {showPdf && (
+              {showPdf && book && (
                 <div className="flex-1 flex items-center justify-center space-x-4">
                   <img
                     src={book.coverImage}
