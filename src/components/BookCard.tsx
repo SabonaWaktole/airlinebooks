@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, Star, Clock, User } from 'lucide-react';
+import { Eye, Star, Clock, User, Play } from 'lucide-react';
 import { Book } from '../types';
 import { useApp } from '../contexts/AppContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -9,7 +9,7 @@ interface BookCardProps {
 }
 
 export const BookCard: React.FC<BookCardProps> = ({ book }) => {
-  const { setCurrentView, setSelectedBookId } = useApp();
+  const { setCurrentView, setSelectedBookId, setCurrentBook, updateAudioPlayer, setCurrentChapter } = useApp();
   const { t } = useLanguage();
 
   const formatDuration = (minutes: number) => {
@@ -19,6 +19,27 @@ export const BookCard: React.FC<BookCardProps> = ({ book }) => {
   };
 
   const handleBookClick = () => {
+    // Set the book as current and start playing immediately
+    setCurrentBook(book);
+    
+    // If the book has chapters, play the first chapter
+    if (book.chapters && book.chapters.length > 0) {
+      const firstChapter = book.chapters[0];
+      setCurrentChapter(firstChapter);
+      updateAudioPlayer({
+        currentChapter: firstChapter,
+        isPlaying: true,
+        currentTime: 0
+      });
+    } else {
+      // If no chapters, play the main audio
+      updateAudioPlayer({
+        isPlaying: true,
+        currentTime: 0
+      });
+    }
+
+    // Navigate to book detail page
     setSelectedBookId(book.id);
     setCurrentView('book-detail');
   };
@@ -39,11 +60,11 @@ export const BookCard: React.FC<BookCardProps> = ({ book }) => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         
-        {/* View Details Button */}
+        {/* Play Button */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-white/90 dark:bg-gray-800/90 text-gray-900 dark:text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-white dark:hover:bg-gray-800 hover:scale-110 transition-all duration-300 shadow-lg">
-            <Eye size={20} />
-            <span className="font-medium">{t.viewDetails}</span>
+          <div className="bg-emerald-600/90 text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-emerald-600 hover:scale-110 transition-all duration-300 shadow-lg">
+            <Play size={20} className="ml-0.5" />
+            <span className="font-medium">{t.play}</span>
           </div>
         </div>
 

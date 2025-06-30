@@ -1,16 +1,33 @@
 import React from 'react';
-import { Play, Star, TrendingUp, BookOpen } from 'lucide-react';
+import { Play, Star, TrendingUp, BookOpen, Plane, Globe } from 'lucide-react';
 import { books } from '../data/books';
 import { useApp } from '../contexts/AppContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Hero: React.FC = () => {
-  const { setCurrentBook, setCurrentView } = useApp();
+  const { setCurrentBook, setCurrentView, updateAudioPlayer, setCurrentChapter } = useApp();
   const { t } = useLanguage();
   const featuredBook = books.find(book => book.isPopular && book.isNew) || books[0];
 
   const handlePlayBook = () => {
     setCurrentBook(featuredBook);
+    
+    // If the book has chapters, play the first chapter
+    if (featuredBook.chapters && featuredBook.chapters.length > 0) {
+      const firstChapter = featuredBook.chapters[0];
+      setCurrentChapter(firstChapter);
+      updateAudioPlayer({
+        currentChapter: firstChapter,
+        isPlaying: true,
+        currentTime: 0
+      });
+    } else {
+      // If no chapters, play the main audio
+      updateAudioPlayer({
+        isPlaying: true,
+        currentTime: 0
+      });
+    }
   };
 
   const formatDuration = (minutes: number) => {
@@ -45,6 +62,24 @@ export const Hero: React.FC = () => {
               <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
                 {t.heroSubtitle}
               </p>
+
+              {/* Partnership Information */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="flex items-center space-x-2">
+                    <Plane className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    <span className="font-semibold text-gray-900 dark:text-white">Ethiopian Airlines</span>
+                  </div>
+                  <span className="text-gray-400">×</span>
+                  <div className="flex items-center space-x-2">
+                    <Globe className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                    <span className="font-semibold text-gray-900 dark:text-white">Nordic ICT</span>
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                  This platform is developed by Nordic ICT in partnership with Ethiopian Airlines to review and evaluate Amharic audiobooks for in-flight entertainment, bringing Ethiopian culture and literature to travelers worldwide.
+                </p>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">

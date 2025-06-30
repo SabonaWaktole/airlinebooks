@@ -1,8 +1,9 @@
 import React from 'react';
 import { Hero } from '../Hero';
+import { RandomPlayCard } from '../RandomPlayCard';
 import { books, genres, narrators, authors, languages } from '../../data/books';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { BookOpen, Users, Globe, Star, TrendingUp, Clock } from 'lucide-react';
+import { BookOpen, Users, Globe, Star, TrendingUp, Clock, Shuffle, Headphones, Radio } from 'lucide-react';
 
 export const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -71,12 +72,60 @@ export const Home: React.FC = () => {
     { label: t.averageBookLength, value: `${Math.round(totalDuration / totalBooks)}m` }
   ];
 
+  // Random play cards data
+  const randomPlayCards = [
+    {
+      title: 'Surprise Me',
+      description: 'Let us pick a random audiobook for you to discover something new and exciting.',
+      icon: <Shuffle className="w-8 h-8" />,
+      gradient: 'from-emerald-500 to-teal-500'
+    },
+    {
+      title: 'Random Discovery',
+      description: 'Explore our collection with a randomly selected audiobook from our library.',
+      icon: <Radio className="w-8 h-8" />,
+      gradient: 'from-purple-500 to-violet-500'
+    },
+    {
+      title: 'Lucky Pick',
+      description: 'Feeling adventurous? Let chance decide your next listening experience.',
+      icon: <Headphones className="w-8 h-8" />,
+      gradient: 'from-blue-500 to-cyan-500'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Hero />
       
-      {/* Statistics Section */}
+      {/* Random Play Cards Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Random Discovery
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Not sure what to listen to? Let us surprise you with a random selection from our curated collection.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {randomPlayCards.map((card, index) => (
+              <RandomPlayCard
+                key={index}
+                title={card.title}
+                description={card.description}
+                icon={card.icon}
+                gradient={card.gradient}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Statistics Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -91,7 +140,7 @@ export const Home: React.FC = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="group bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group bg-white dark:bg-gray-800 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <div className="text-white">
@@ -142,7 +191,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Content Quality Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -154,7 +203,7 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 shadow-lg">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="w-8 h-8 text-white" />
@@ -168,7 +217,7 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 shadow-lg">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-white" />
@@ -182,7 +231,7 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 shadow-lg">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-8 h-8 text-white" />
